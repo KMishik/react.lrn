@@ -1,0 +1,24 @@
+{
+  "name": "react.lrn",
+  "version": "1.0.0",
+  "description": "Learn React with book Mardan Azat React Quickly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel scripts/script.jsx -o scripts/script.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KMishik/react.lrn.git"
+  },
+  "author": "KMishik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KMishik/react.lrn/issues"
+  },
+  "homepage": "https://github.com/KMishik/react.lrn#readme",
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  }
+}
