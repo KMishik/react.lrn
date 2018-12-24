@@ -1,24 +1,25 @@
-class HelloWorld extends React.Component {
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.launchClock();
+    this.state = { currentTime: "Getting clock data ... " /*(new Date()).toLocaleString()*/ };
+  }
+
+  launchClock() {
+    setInterval(() => {
+      console.log("Update clock ...");
+      this.setState({ currentTime: new Date().toLocaleString() });
+    }, 1000);
+  }
+
   render() {
-    let DateTimeNow = new Date().toLocaleString();
+    console.log("Rendering clock ...");
     return React.createElement(
-      'h1',
-      this.props,
-      'Hello ',
-      this.props.frameworkName,
-      ' world, now ',
-      DateTimeNow,
-      ', and now again ',
-      new Date(Date.now()).toLocaleString(),
-      ' !'
+      "div",
+      null,
+      this.state.currentTime
     );
   }
 }
 
-ReactDOM.render(React.createElement(
-  'div',
-  null,
-  React.createElement(HelloWorld, { id: 'reactjs', frameworkName: 'ReactJS', title: 'Talk about ReactJS' }),
-  React.createElement(HelloWorld, { id: 'angularjs', frameworkName: 'AngularJS', title: 'Talk about AngularJS' }),
-  React.createElement(HelloWorld, { id: 'emberjs', frameworkName: 'EmberJS', title: 'Talk about EmberJS' })
-), document.getElementById('content'));
+ReactDOM.render(React.createElement(Clock, null), document.getElementById('content'));
