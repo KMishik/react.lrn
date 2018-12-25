@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel scripts/script.jsx -o scripts/script.js -w"
+    "build": "./node_modules/.bin/babel jsx --out-dir scripts"
   },
   "repository": {
     "type": "git",

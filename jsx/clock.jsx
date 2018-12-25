@@ -2,8 +2,8 @@ class Clock extends React.Component
 {
   constructor(props) {
     super(props);
-    this.launchClock();
     this.state = {currentTime: "Getting clock data ... "/*(new Date()).toLocaleString()*/};
+    this.launchClock();
   }
 
 
@@ -16,8 +16,11 @@ class Clock extends React.Component
 
   render() {
     console.log("Rendering clock ...");
-    return (<div>{this.state.currentTime}</div>);
+    return (
+    <div>
+      <AnalogDisplay time = {this.state.currentTime}/>
+      <DigitalDisplay time = {this.state.currentTime}/>
+    </div>
+    );
   }
 }
-
-ReactDOM.render (<Clock />, document.getElementById('content'));
